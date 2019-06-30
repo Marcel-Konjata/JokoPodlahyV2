@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Montserrat:400,600|Rubik&display=swap');
+
+@import './sass/header';
+
+*,*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 0.625rem;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
