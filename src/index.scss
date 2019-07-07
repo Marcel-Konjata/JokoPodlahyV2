@@ -1,26 +1,62 @@
-@import url('https://fonts.googleapis.com/css?family=Lora|Montserrat:400,600|Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lora|Montserrat:400,600|Rubik&display=swap");
 
-@import './sass/header';
+@import "./sass/header";
+@import "./sass/intro";
+@import "./sass/flexGrid";
+@import "./sass/buttons";
+@import "./sass/cardSlider";
+@import "./sass/infoCard";
+@import "./sass/showcase";
+@import "./sass/stairGallery";
+@import "./sass/offer";
 
-*,*::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 0.625rem;
+html {
+  font-size: 0.625rem;
+  height: 100%;
 }
 
-body{
-    font-size: 1.6rem;
+body {
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#___gatsby > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: stretch;
+
+  main {
+    flex: 1 0 auto;
+  }
+  header,
+  footer {
+    flex-shrink: 0;
+  }
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.wrapper{
-    max-width: 1200px;
-    margin: 0 auto;
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.no-padding {
+  padding: 0 !important;
+}
+
+.padding-lg-l {
+  padding-left: 150px;
 }

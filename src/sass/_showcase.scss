@@ -1,0 +1,116 @@
+.showcase {
+  padding-top: 150px;
+  padding-bottom: 200px;
+
+  main {
+    display: flex;
+    @media (max-width: 940px) {
+      flex-direction: column;
+      width: 85%;
+      margin: 0 auto;
+      
+    }
+    aside{
+        padding-left: 10px;
+    }
+    .showcase-text {
+        padding: 45px;
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        border-bottom: 1px solid black;
+        margin-bottom: 20px;
+      }
+      p {
+        font-family: "Rubik", sans-serif;
+        font-size: 1.6rem;
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  &-headlines {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    &--left,
+    &--right {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+  &-headlines--left {
+    .showcase-card {
+      h3 {
+        margin-top: 45px;
+        display: block;
+      }
+    }
+  }
+  &-headlines--right {
+    .showcase-card {
+      h3 {
+        margin-top: 20px;
+        display: block;
+      }
+    }
+  }
+
+  &-card {
+    max-width: 172px;
+    min-height: 146px;
+    padding: 10px;
+    font-family: "Montserrat";
+    text-align: center;
+    h3 {
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+    &--line {
+      display: block;
+      width: 70%;
+      height: 1px;
+      transform-origin: center;
+      margin: 5px auto 10px;
+      background: black;
+    }
+
+    &--gold {
+      min-height: 170px;
+      color: white;
+
+      background: linear-gradient(
+        21.54deg,
+        rgb(160, 125, 11) 41.75%,
+        rgba(231, 194, 27, 0.815) 83.65%
+      );
+      & .showcase-card--line {
+        background: white;
+      }
+
+      h3,
+      p {
+        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.739);
+      }
+    }
+    &--brown {
+      color: white;
+
+      background: linear-gradient(180deg, #583327 0%, #970000 174.66%);
+      & .showcase-card--line {
+        background: white;
+      }
+
+      h3,
+      p {
+        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.739);
+      }
+    }
+  }
+}
