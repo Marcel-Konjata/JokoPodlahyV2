@@ -1,0 +1,110 @@
+.about {
+  display: flex;
+  height: 90vh;
+  min-height: 400px;
+  .kdo_jsme {
+    padding: 10px;
+    flex: 0 1 30%;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    align-items: center;
+    background: rgb(87, 45, 45);
+    font-family: "Lora";
+    text-transform: uppercase;
+    color: rgb(175, 155, 44);
+    .active {
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+    h1 {
+      opacity: 0.4;
+      font-size: 3.5rem;
+      margin-top: 50%;
+      margin-bottom: 100px;
+      transform-origin: center;
+      transition: all 0.4s ease-out;
+    }
+    h3 {
+      opacity: 0.4;
+      transform-origin: center;
+      transition: all 0.4s ease-out;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  //move the each child of conatiner to same spot to overlap each other, than use transitiongroup to 
+  //animate fade in
+  //pos absolute is necessary, tranistion doesnt allow to render something after another
+  //or at least couldnt figure it out better, transitiongroup didnt work
+  .conditional {
+    flex: 0 1 70%;
+    background: rgb(245, 245, 245);
+    background-image: url(./images/bacg.png);
+    position: relative;
+    &-text {
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      opacity: 0;
+      padding-right: 10px;
+      transition: all .5s ease-in-out;
+      &.appear{
+        opacity: 1;
+      }
+      &.fade-enter{
+        opacity: 0; transition: all .5s .5s ease-in-out;
+      }
+      &.fade-enter-active,&.fade-exit{
+        opacity: 1;
+      }
+      &.fade-enter-done{
+        opacity: 1;
+      }
+      &.fade-exit{
+        transition: all .5s ease-in-out;
+      }
+      &.fade-exit-active{
+        opacity: 0;
+      }
+      
+    }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+    p {
+      max-width: 600px;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      font-family: "Rubik";
+    }
+
+    .images {
+      position: relative;
+      height: 200px;
+      padding: 10px;
+      margin-top: 20px;
+      .img1 {
+        max-width: 150px;
+        position: absolute;
+        top:45%;
+        right: 20%;
+        z-index: 2;
+      }
+      .img2{
+          max-width: 255px;
+          position: absolute;
+          top: 0;
+          right: 30%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,5 +1,4 @@
 .main-header {
-  
   font-family: "Montserrat", sans-serif;
   padding: 10px;
   height: 8.2rem;
@@ -33,109 +32,114 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  .logo-line--left,.logo-line--right {
-      display: block;
-      height: 1px;
-      width: 50%;
-      background: black;
+
+  #logo path {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.589);
   }
-  .logo-line--left{
-      margin-right: 30px;
-      transform-origin: right;
+
+  .logo-line--left,
+  .logo-line--right {
+    display: block;
+    height: 1px;
+    width: 50%;
+    background: black;
   }
-  .logo-line--right{
-      margin-left: 30px;
-      transform-origin: left;
+  .logo-line--left {
+    margin-right: 30px;
+    transform-origin: right;
+  }
+  .logo-line--right {
+    margin-left: 30px;
+    transform-origin: left;
   }
 }
 
-.svg-writing.animated{
-    .logo-line--right, .logo-line--left{
-        transform: scaleX(0);
-        animation: line-animation 1s ease-out forwards;
-        animation-delay: 2.5s;
-    }
- 
-        @for $i from 1 to 14 {
-          #logo path:nth-child(#{$i}){
-                fill: none;
-                stroke: rgba(0, 0, 0, 0.589);
-                animation: animateLetter;
-                animation-duration: 0.18s;
-                animation-delay: 0.18s*$i;
-                animation-fill-mode: forwards;
-                animation-timing-function: ease-in-out;
-            }
-        }
-    
-        #logo path:nth-child(1){
-         stroke-dasharray: 255.6611785888672;
-         stroke-dashoffset: 255.6611785888672;
-        }
-        #logo path:nth-child(2){
-         stroke-dasharray:  58.50779342651367;
-         stroke-dashoffset:  58.50779342651367;
-        }
-        #logo path:nth-child(3){
-         stroke-dasharray:  76.83780670166016;
-         stroke-dashoffset:  76.83780670166016;
-        }
-        #logo path:nth-child(4){
-         stroke-dasharray:  76.46903991699219;
-         stroke-dashoffset:  76.46903991699219;
-        }
-        #logo path:nth-child(5){
-         stroke-dasharray:  119.73706817626953;
-         stroke-dashoffset:  119.73706817626953;
-        }
-        #logo path:nth-child(6){
-         stroke-dasharray:  66.22315979003906;
-         stroke-dashoffset:  66.22315979003906;
-        }
-        #logo path:nth-child(7){
-         stroke-dasharray:  218.80224609375;
-         stroke-dashoffset:  218.80224609375;
-        }
-        #logo path:nth-child(8){
-         stroke-dasharray:  58.50824737548828;
-         stroke-dashoffset:  58.50824737548828;
-        }
-        #logo path:nth-child(9){
-         stroke-dasharray:   76.83792114257812;
-         stroke-dashoffset:   76.83792114257812;
-        }
-        #logo path:nth-child(10){
-         stroke-dasharray:  96.34935760498047;
-         stroke-dashoffset:  96.34935760498047;
-        }
-        #logo path:nth-child(11){
-         stroke-dasharray:  66.2232437133789;
-         stroke-dashoffset:  66.2232437133789;
-        }
-        #logo path:nth-child(12){
-         stroke-dasharray: 93.84085083007812;
-         stroke-dashoffset: 93.84085083007812;
-        }
-        #logo path:nth-child(13){
-         stroke-dasharray:  66.22320556640625;
-         stroke-dashoffset:  66.22320556640625;
-        }
-        
+.svg-writing.animated {
+  .logo-line--right,
+  .logo-line--left {
+    transform: scaleX(0);
+    animation: line-animation 1s ease-out forwards;
+    animation-delay: 2.5s;
+  }
 
+  @for $i from 1 to 14 {
+    #logo path:nth-child(#{$i}) {
+      fill: none;
+      stroke: rgba(0, 0, 0, 0.589);
+      animation: animateLetter;
+      animation-duration: 0.18s;
+      animation-delay: 0.18s * $i;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  #logo path:nth-child(1) {
+    stroke-dasharray: 255.6611785888672;
+    stroke-dashoffset: 255.6611785888672;
+  }
+  #logo path:nth-child(2) {
+    stroke-dasharray: 58.50779342651367;
+    stroke-dashoffset: 58.50779342651367;
+  }
+  #logo path:nth-child(3) {
+    stroke-dasharray: 76.83780670166016;
+    stroke-dashoffset: 76.83780670166016;
+  }
+  #logo path:nth-child(4) {
+    stroke-dasharray: 76.46903991699219;
+    stroke-dashoffset: 76.46903991699219;
+  }
+  #logo path:nth-child(5) {
+    stroke-dasharray: 119.73706817626953;
+    stroke-dashoffset: 119.73706817626953;
+  }
+  #logo path:nth-child(6) {
+    stroke-dasharray: 66.22315979003906;
+    stroke-dashoffset: 66.22315979003906;
+  }
+  #logo path:nth-child(7) {
+    stroke-dasharray: 218.80224609375;
+    stroke-dashoffset: 218.80224609375;
+  }
+  #logo path:nth-child(8) {
+    stroke-dasharray: 58.50824737548828;
+    stroke-dashoffset: 58.50824737548828;
+  }
+  #logo path:nth-child(9) {
+    stroke-dasharray: 76.83792114257812;
+    stroke-dashoffset: 76.83792114257812;
+  }
+  #logo path:nth-child(10) {
+    stroke-dasharray: 96.34935760498047;
+    stroke-dashoffset: 96.34935760498047;
+  }
+  #logo path:nth-child(11) {
+    stroke-dasharray: 66.2232437133789;
+    stroke-dashoffset: 66.2232437133789;
+  }
+  #logo path:nth-child(12) {
+    stroke-dasharray: 93.84085083007812;
+    stroke-dashoffset: 93.84085083007812;
+  }
+  #logo path:nth-child(13) {
+    stroke-dasharray: 66.22320556640625;
+    stroke-dashoffset: 66.22320556640625;
+  }
 }
 
-
-@keyframes line-animation{
-    0%{
-        transform: scaleX(0);
-    }
-    100%{
-        transform: scaleX(1);
-    }
+@keyframes line-animation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
-@keyframes animateLetter{
-  to{
+@keyframes animateLetter {
+  to {
     stroke-dashoffset: 0;
   }
 }

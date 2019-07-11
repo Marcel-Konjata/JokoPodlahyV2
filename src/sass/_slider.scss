@@ -1,0 +1,21 @@
+.slider{
+    .arrow{
+        z-index: 100;
+        position: absolute;
+        left: 2%;
+        top: 90%;
+        cursor: pointer;
+    }
+    .arrow.right{
+        position: absolute;
+        left: 92%;
+    }
+    .dots{
+        top: 90%;
+        left: 50%;
+        transform: translatex(-50%);
+        .dot{
+            cursor: pointer;
+        }
+    }
+}

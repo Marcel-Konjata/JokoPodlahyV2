@@ -10,8 +10,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./Footer"
 // import "./layout.css"
-import '../index.scss'
+import "../index.scss"
 
 const Layout = ({ children, animated = false }) => {
   const data = useStaticQuery(graphql`
@@ -27,15 +28,9 @@ const Layout = ({ children, animated = false }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} animated={animated} />
-     
-      
-        <main>{children}</main>
-        <footer>
-        <p>jokopodlahy.cz</p>
-         <p> © {new Date().getFullYear()} všechna práva vyhrazena
-          </p>
-        </footer>
-     
+
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }
@@ -44,6 +39,5 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   animated: PropTypes.bool,
 }
-
 
 export default Layout

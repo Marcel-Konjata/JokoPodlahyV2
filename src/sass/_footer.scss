@@ -1,0 +1,54 @@
+.main-footer {
+  background: black;
+  padding: 80px 10px;
+  color: rgb(168, 166, 166);
+  font-family: "Montserrat", sans-serif;
+  .row {
+    display: flex;
+    justify-content: space-between;
+    &:nth-child(2) {
+      color: rgba(255, 217, 0, 0.726);
+      align-items: flex-end;
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px; 
+  }
+  a{
+      margin-top: 10px;
+      display: inline-block;
+      
+      &:hover{
+        color: goldenrod;
+       
+      }
+  }
+  p {
+    font-size: 1.4rem;
+    max-width: 250px;
+  }
+  &-about {
+    max-width: 250px;
+  }
+
+  &-follow {
+    max-width: 276px;
+    text-align: right;
+  }
+  &-phone{
+      display: flex;
+      align-items: center;
+      span{
+          display: block
+      }
+      .numbers{
+          margin-left: 15px;
+          & > span:nth-child(1){
+              margin-bottom: 5px;
+          }
+      }
+  }
+}

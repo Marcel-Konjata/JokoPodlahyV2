@@ -1,7 +1,7 @@
 .intro{
     padding: 80px 10px;
     display: flex;
-    
+    animation: intro .8s 3s ease-in-out backwards;
     @media (max-width:1050px) {
         
         flex-direction: column;
@@ -45,6 +45,7 @@
     }
   &-cards{
       padding-top: 50px;
+      padding-right: 5px; 
       padding-left:140px ; //padding for picture and cardsliders cards -- horible naming redo this in future
       @media (max-width:1050px) {
         padding-left:40px; 
@@ -58,4 +59,20 @@
       }
        
   }
+}
+
+
+@keyframes intro{
+    0%{
+        opacity: 0;
+        transform: translate(0, 50%)
+
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0)
+    }
 }

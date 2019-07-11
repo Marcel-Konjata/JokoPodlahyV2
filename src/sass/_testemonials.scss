@@ -1,0 +1,39 @@
+.testemonials{
+    background: rgb(228, 228, 228);
+    padding:100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .testemonial-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: white;
+        padding: 50px 60px ;
+        height: 350px;  
+        line-height: 1.4;
+        font-family: 'Rubik',sans-serif;
+        font-size: 1.8rem;
+        
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+
+        &-review{
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 10px;
+            text-align: center;
+        }
+        footer{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            .name{
+                font-weight: 600;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

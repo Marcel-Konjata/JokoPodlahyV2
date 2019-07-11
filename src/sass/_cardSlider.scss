@@ -108,71 +108,52 @@
 
 // animations for changing state of slides
 
-.card-wrapper.next:nth-of-type(1) {
-  .smallCard {
-    animation: anim-next-small 0.4s 0.2s ease-out forwards;
-  }
-  .largeCard {
-    animation: anim-next-large 0.6s ease-out 0.4s forwards;
+.next{
+  animation: wrp-next 1s ease forwards;
+  &:nth-of-type(2)>.smallCard{
+    animation: card-next 1s  ease forwards;
   }
 }
-.card-wrapper.next:nth-of-type(2) {
-  .smallCard {
-    animation: anim-next-small 0.4s 0.8s ease-out forwards;
-  }
-  .largeCard {
-    animation: anim-next-large 0.6s ease-out 1s forwards;
+.previous{
+  animation: wrp-prev 1s ease forwards;
+  &:nth-of-type(1)>.smallCard{
+    animation: card-prev 1s  ease forwards;
   }
 }
 
-.card-wrapper.previous:nth-of-type(1) {
-  .smallCard {
-    animation: anim-prev-small 0.4s 1.4s ease-out backwards;
+
+@keyframes wrp-next{
+  0%{
+    transform: translate(0);
   }
-  .largeCard {
-    animation: anim-prev-large 0.6s ease-out 1s backwards;
-  }
-}
-.card-wrapper.previous:nth-of-type(2) {
-  .smallCard {
-    animation: anim-prev-small 0.4s 0.6s ease-out backwards;
-  }
-  .largeCard {
-    animation: anim-prev-large 0.6s ease-out 0.2s backwards;
+  100%{
+    transform: translate(-100%);
   }
 }
 
-@keyframes anim-next-small {
-  from {
-    transform: translateX(0);
+@keyframes card-next{
+  0%{
+    transform: translate(150%)
   }
-  to {
-    transform: translateX(-185%);
-  }
-}
-@keyframes anim-next-large {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-152%);
+  100%{
+    transform: translate(0)
   }
 }
 
-@keyframes anim-prev-small {
-  from {
-    transform: translateX(-185%);
+@keyframes wrp-prev{
+  0%{
+    transform: translate(-100%);
   }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes anim-prev-large {
-  from {
-    transform: translateX(-152%);
-  }
-  to {
-    transform: translateX(0);
+  100%{
+    transform: translate(0%);
   }
 }
 
+@keyframes card-prev{
+  0%{
+    transform: translate(-150%)
+  }
+  100%{
+    transform: translate(0%)
+  }
+}
