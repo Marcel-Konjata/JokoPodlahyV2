@@ -6,9 +6,18 @@
   .row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    @media (max-width:690px) {
+      flex-direction: column;
+      text-align: center;
+      .copyrigth{
+        margin: 10px 0;
+      }
+    }
     &:nth-child(2) {
       color: rgba(255, 217, 0, 0.726);
-      align-items: flex-end;
+      
       text-align: center;
       margin-top: 40px;
     }
@@ -37,14 +46,28 @@
   &-follow {
     max-width: 276px;
     text-align: right;
+    @media (max-width:690px) {
+     margin: 25px 0;
+      text-align: center;
+      
+    }
   }
   &-phone{
       display: flex;
       align-items: center;
+      @media (max-width:690px) {
+        flex-direction: column;
+        text-align: center;
+        margin: 20px 0;
+      }
       span{
           display: block
       }
       .numbers{
+        @media (max-width:690px) {
+         margin: 0;
+          
+        }
           margin-left: 15px;
           & > span:nth-child(1){
               margin-bottom: 5px;

@@ -24,7 +24,7 @@ function Selection({active, setActive}) {
         >
           Naše zkušenosti
         </h3>
-        <p>{active}</p>
+        
       </aside>
     )
 }

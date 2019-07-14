@@ -1,6 +1,7 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
+
 import SEO from "../components/seo"
 import SelectOnHover from "../components/intro-components/SelectOnHover"
 import Selection from "../components/kdo jsme/Selection"

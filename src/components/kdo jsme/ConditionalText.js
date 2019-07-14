@@ -5,7 +5,7 @@ import Prkna from "../../images/prkna2.jpg"
 import { CSSTransition } from "react-transition-group"
 
 function ConditionalText({ active }) {
-  console.log()
+ 
 
   return (
     <section className="conditional">

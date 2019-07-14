@@ -1,4 +1,14 @@
 .slider{
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+    
+    min-width: 300px;
+    width: 660px;
+    border: 2px solid black;
+    @media (max-width:451px) {
+        height:400px;
+    }
     .arrow{
         z-index: 100;
         position: absolute;
@@ -9,6 +19,7 @@
     .arrow.right{
         position: absolute;
         left: 92%;
+      
     }
     .dots{
         top: 90%;

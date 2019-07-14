@@ -1,15 +1,21 @@
 import React from "react"
 import ShowcaseHeadlines from "./ShowcaseHeadlines"
 import ShowcaseImage from "./ShowcaseImage"
+import Fade from "react-reveal/Fade"
 
 function Showcase() {
   return (
     <section className="showcase wrapper">
-      <ShowcaseHeadlines />
+     <Fade fraction={1} duration={1500}>
+        <ShowcaseHeadlines />
+        </Fade>
       <main>
+      <Fade fraction={.6}>
         <aside className="col-6">
           <ShowcaseImage />
         </aside>
+        </Fade>
+        <Fade right fraction={.9} duration={1400}>
         <article className="showcase-text col-6">
           <h2>Dokážeme Cokoliv</h2>
           <p>
@@ -25,6 +31,7 @@ function Showcase() {
             ateliéry), kde jsme použily Vinyl i na zdi (viz foto)
           </p>
         </article>
+        </Fade>
       </main>
     </section>
   )

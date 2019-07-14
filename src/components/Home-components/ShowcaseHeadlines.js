@@ -1,8 +1,10 @@
 import React from "react"
 
+
 function ShowcaseHeadlines() {
   return (
-    <header className="showcase-headlines">
+   
+    <header className="showcase-headlines" >
       <div className=" showcase-headlines--left">
         <div className="showcase-card showcase-card--transparent">
           <h3>Projekt</h3>
@@ -29,6 +31,7 @@ function ShowcaseHeadlines() {
         </div>
       </div>
     </header>
+    
   )
 }
 

@@ -1,0 +1,55 @@
+.sidebar{
+    position: fixed;
+    top:100px;
+    right: -10px;
+    z-index: 90;
+    max-width: 50%;
+    min-width: 30%;
+    background: rgb(251, 251, 251);
+    height: 80vh; 
+    text-align: center;
+    padding: 50px 10px;
+    box-shadow: -14px 0px 15px rgba(0, 0, 0, 0.096);
+    @media (max-width:630px) {
+        min-width: 45%;
+    }
+    @media (max-width:340px) {
+        min-width: 65%;
+    }
+    transform-origin: right;
+    transition: all .8s ease-in-out;
+    transform: scaleX(0);
+    color: transparent;
+    a{
+        display: block;
+        margin-top: 35px;
+        border-bottom: 1px dotted rgb(218, 218, 218);
+        padding: 10px;
+    }
+    &.anim{
+        &-enter{
+            transform: scaleX(0);
+            transition: all .5s ease-in-out;
+            &-active{
+                transform: scaleX(1);
+                transition: all .3s ease-out;
+            }
+            &-done{
+                transform: scaleX(1);
+                color: black;
+               
+            }
+        }
+        &-exit{
+            transform: scaleX(1);
+            transition: all .2s  ease-in-out;
+                color: transparent;
+                &-active{
+                    transition: all .5s .3s ease-in;
+                    color: transparent;
+                    transform: scaleX(0); 
+                }
+               // on done it unmouts so it is not animated at all
+        }
+    }
+}

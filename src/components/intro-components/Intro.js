@@ -22,6 +22,7 @@ export const Intro = () => {
 
   return (
     <>
+     
       <div className="wrapper intro">
         <div className="col-4">
           <IntroText handleClick={handleClick} isClicked={isClicked} />
@@ -56,6 +57,7 @@ export const Intro = () => {
             </div>
         </div>
       </div>
+    
     </>
   )
 }

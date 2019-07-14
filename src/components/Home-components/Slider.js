@@ -1,6 +1,8 @@
 import React from "react"
 import makeCarousel from "react-reveal/makeCarousel"
 import Slide from "react-reveal/Slide"
+import RightArrow from "../../assets/sharp-chevron_right-24px.inline.svg";
+import LeftArrow from "../../assets/sharp-chevron_left-24px.inline.svg";
 
 //for clearer understanding read from the bottom to the top
 // concept is based on passing children of children using map function
@@ -29,12 +31,13 @@ const Container = ({ position, handleClick, children, total }) => {
     <div
       className="slider"
       style={{
-        position: "relative",
-        overflow: "hidden",
-        height: 350,
-        minWidth: 373,
-        width: "660px",
-        border: "2px solid black",
+        // position: "relative",
+        // overflow: "hidden",
+        // height: 350,
+        
+        // minWidth: 300,
+        // width: "660px",
+        // border: "2px solid black",
       }}
     >
       <React.Fragment>
@@ -44,14 +47,15 @@ const Container = ({ position, handleClick, children, total }) => {
           onClick={handleClick}
           data-position={position - 1}
         >
-          arrow
+         <LeftArrow />
         </div>
         <div
           className="arrow right"
           onClick={handleClick}
           data-position={position + 1}
+          
         >
-          arrow
+          <RightArrow />
         </div>
         <Dots>
           {Array(...Array(total)).map((val, index) => (

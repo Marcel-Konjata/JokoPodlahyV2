@@ -1,0 +1,197 @@
+.galerie {
+  font-family: "Rubik", sans-serif;
+  padding-top: 60px;
+  h2 {
+    font-family: "Lora", serif;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 3.2rem;
+  }
+  .image-gallery {
+    &-banner {
+      margin-top: 60px;
+      color: rgba(34, 34, 34, 0.897);
+      max-width: 750px;
+      padding: 100px;
+      background: linear-gradient(
+        45deg,
+        rgb(173, 156, 156) 25%,
+        rgb(194, 151, 151)
+      );
+      p {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+      }
+    }
+    &-main {
+      padding: 25px 10px;
+      box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.534);
+      max-width: 800px;
+      background: rgb(243, 243, 243);
+      margin: -60px auto 0 auto;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      //styles for one each individual image
+      .gallery-image {
+        position: relative;
+        margin: 2px;
+        border: 5px solid rgb(112, 75, 53);
+        min-width: 250px;
+        max-height: 250px;
+        overflow: hidden;
+        cursor: pointer;
+
+        //paralax efect on hover
+        &::before {
+          transition: all 0.7s ease-in-out;
+          opacity: 0;
+          position: absolute;
+          content: "ukázat";
+          top: 45%;
+          left: 40%;
+          width: 100%;
+          height: 100%;
+          z-index: 3;
+          color: white;
+        }
+        &:hover::before {
+          opacity: 1;
+        }
+
+        //give any direct child  of image transition
+        & > * {
+          transition: all 0.7s ease-in-out;
+        }
+        //specific child can be replace by direct child but this is more clear
+        &:hover .gatsby-image-wrapper {
+          transition: all 0.7s ease-in-out;
+          transform: scale(1.05);
+          &::before {
+            opacity: 1;
+          }
+        }
+        .gatsby-image-wrapper::before {
+          opacity: 0;
+          transition: all 0.7s ease-in-out;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.486);
+          width: 100%;
+          height: 100%;
+          z-index: 4;
+          color: rgba(255, 255, 255, 0.637);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    //overlay for the page to unable click on something else
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.63);
+      z-index: 10;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0;
+      transition: all .5s ease-in; 
+      &.animation-enter-active,&.animation-enter-done{
+        opacity: 1;
+      }
+      &.animation-exit{
+        opacity: 1;
+        transition: all .5s ease-in;
+        &-active{
+          opacity: 0;
+          transition: all .5s ease-in;
+        }
+        &-done{
+          opacity: 0;
+        }
+      }
+     &.animation-enter{
+      & .lightbox{
+        opacity: 0;
+        transition: all .5s ease-in;
+      }  
+      &-active .lightbox{
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+        
+      }
+      &-done .lightbox{
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+      }
+    }
+    //lightbox styles ////////////////////////////////////////////////////
+    .lightbox {
+      border: 5px white solid;
+      min-width: 50vw;
+      max-width: 60vw;
+      max-height: 95vh;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      z-index: 20;
+      opacity: 0;
+      transition: all .5s .5s ease-in-out;
+      transform-origin: right;
+      transform: scaleX(.2) scaleY(.3) translate(-50%, -50%);
+      @media (max-width:900px) {
+        min-width: 60vw;
+      }
+      @media (max-width:650px) {
+        min-width: 95vw;
+      }
+      }
+
+      //close button styles
+      button {
+        background: rgba(0, 0, 0, 0.781);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+
+        span {
+          display: block;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.76);
+          transform-origin: center;
+          transform: rotate(45deg) translate(5%, 15%);
+          transition: transform 0.5s ease-out;
+          &:nth-of-type(2) {
+            transform: rotate(-45deg) translate(5%, -5%);
+          }
+        }
+        &:hover span {
+          transition: transform 0.5s ease;
+          transform: rotate(180deg);
+          &:nth-of-type(2) {
+            transition: transform 0.5s ease;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+
+}
