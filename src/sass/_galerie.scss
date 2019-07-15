@@ -139,7 +139,7 @@
       border: 5px white solid;
       min-width: 500px;
       max-width: 60vw;
-      max-height: 85vh;
+      max-height: 80vh;
       position: fixed;
       top: 55%;
       left: 50%;
@@ -155,6 +155,10 @@
       }
       @media (max-width:650px) {
         min-width: 95vw;
+      }
+      @media (max-width:460px) {
+        min-width: 90vw;
+        max-height: 80vh;
       }
       }
 
