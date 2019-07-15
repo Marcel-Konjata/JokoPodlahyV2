@@ -8,10 +8,11 @@ import("../index.scss")
 
 class Header extends React.Component {
   state = {
-    windowWidth: window.innerWidth,
-    windowHeight: window.innerHeight,
+    windowWidth: '',
+    windowHeight: '',
     hamburgerTogle: false,
-    isScroled:false
+    isScroled:false,
+    showHamburgerMenu: false,
   } 
   componentDidMount() {
     window.addEventListener("resize", this.updateWindowParameters);
@@ -19,10 +20,20 @@ class Header extends React.Component {
   }
 
   updateWindowParameters = () => {
-    this.setState({
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-    })
+    if(window !== undefined){
+      this.setState({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+      })
+
+      if(this.state.windowWidth <= 839 && this.state.windowWidth !== ''){
+        this.setState({showHamburgerMenu:true})
+      }
+      if(this.state.windowWidth > 839 || this.state.windowWidth === ''){
+        this.setState({showHamburgerMenu:false})
+      }
+      
+    }
   }
 
   componentWillUnmount() {
@@ -54,7 +65,7 @@ class Header extends React.Component {
             </AniLink>
           </div>
 
-          {this.state.windowWidth <= 839 ? (
+          {this.state.showHamburgerMenu ? (
             <div
               className={`hamburger ${
                 this.state.hamburgerTogle ? "active" : ""
