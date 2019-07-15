@@ -15,11 +15,15 @@ class Header extends React.Component {
     showHamburgerMenu: false,
   } 
   componentDidMount() {
+    // lifecycle methods should be ommited in server render so it is safe or it should be use window object inside
     window.addEventListener("resize", this.updateWindowParameters);
     window.addEventListener("scroll", this.handleScroll);
+    window.innerWidth <= 839 ? this.setState({showHamburgerMenu: true}) : this.setState({showHamburgerMenu:false});
   }
 
+
   updateWindowParameters = () => {
+    // this should solve server rendering problem of window undefined
     if(window !== undefined){
       this.setState({
         windowWidth: window.innerWidth,
