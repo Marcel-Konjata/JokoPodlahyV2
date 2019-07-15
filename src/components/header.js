@@ -1,9 +1,9 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import HeaderLogo from "./HeaderLogo"
 import SideMenu from "./SideMenu"
 import { CSSTransition } from "react-transition-group"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import("../index.scss")
 
 class Header extends React.Component {
@@ -11,9 +11,11 @@ class Header extends React.Component {
     windowWidth: window.innerWidth,
     windowHeight: window.innerHeight,
     hamburgerTogle: false,
-  }
+    isScroled:false
+  } 
   componentDidMount() {
-    window.addEventListener("resize", this.updateWindowParameters)
+    window.addEventListener("resize", this.updateWindowParameters);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   updateWindowParameters = () => {
@@ -24,7 +26,8 @@ class Header extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateWindowParameters)
+    window.removeEventListener("resize", this.updateWindowParameters);
+    window.removeEventListener("scroll", this.handleScroll);
   }
   handleTogle = () => {
     this.setState(currentstate => {
@@ -32,17 +35,23 @@ class Header extends React.Component {
       return { hamburgerTogle: updateValue }
     })
   }
+  handleScroll =()=>{
+    const windowPos = window.scrollY;
+    if(windowPos>0){
+      this.setState({isScroled:true})
+    }
+    else this.setState({isScroled:false})
+  }
 
   render() {
-    console.log(this.state.hamburgerTogle)
     const { siteTitle } = this.props
     return (
-      <header className="main-header">
+      <header className={`main-header ${this.state.isScroled && "scrolled"}`}>
         <div className="wrapper">
           <div className="main-page">
-            <Link to="/" className="main-header-logo">
+            <AniLink fade to="/" className="main-header-logo">
               {siteTitle}
-            </Link>
+            </AniLink>
           </div>
 
           {this.state.windowWidth <= 839 ? (
@@ -58,18 +67,29 @@ class Header extends React.Component {
             </div>
           ) : (
             <nav className="main-header-nav">
-              <Link to="/kdo_jsme">Kdo jsme</Link>
-              <Link to="/galerie">Galerie</Link>
-              <Link to="/kontakt">Kontakt</Link>
+              <AniLink cover direction="right" bg="#572d2d" to="/kdo_jsme" activeClassName="active">
+                Kdo jsme
+              </AniLink>
+              <AniLink cover direction="bottom" bg="#572d2d" to="/galerie" activeClassName="active">
+                Galerie
+              </AniLink>
+              <AniLink fade to="/kontakt" activeClassName="active">
+                Kontakt
+              </AniLink>
             </nav>
           )}
         </div>
         <HeaderLogo animationOnStart={this.props.animated} />
-       
-          <CSSTransition mountOnEnter unmountOnExit timeout={{enter:800, exit:1000}} classNames='anim' in={this.state.hamburgerTogle}>
-            <SideMenu toggle={this.handleTogle} />
-          </CSSTransition>
 
+        <CSSTransition
+          mountOnEnter
+          unmountOnExit
+          timeout={{ enter: 800, exit: 1000 }}
+          classNames="anim"
+          in={this.state.hamburgerTogle}
+        >
+          <SideMenu toggle={this.handleTogle} />
+        </CSSTransition>
       </header>
     )
   }

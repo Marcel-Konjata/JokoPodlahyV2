@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import LongArrow from "../inlinesSvg/LongArrow"
 import Arrow from "../inlinesSvg/Arrow"
 
@@ -20,9 +20,9 @@ const IntroText = ({ handleClick, isClicked }) => {
         a Pracujeme se všemi druhy materiálů.
       </p>
       <div className="intro-links">
-        <Link to="/kontakt" className="btn-outline btn-outline--brown">
+        <AniLink fade to="/kontakt" className="btn-outline btn-outline--brown">
           Kontaktuje nás
-        </Link>
+        </AniLink>
         <button className="transparent-btn" onClick={handleClick}>
           {isClicked ? "ukaž méně" : "zjistit více"}
           <span className="arrows">

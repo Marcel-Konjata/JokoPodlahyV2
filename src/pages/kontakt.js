@@ -1,10 +1,11 @@
 import React from "react"
-
+import SEO from "../components/seo"
 import KontaktImage from "../images/contact.jpg"
 import Layout from "../components/Layout";
 function kontakt() {
   return (
     <Layout>
+    <SEO title="kontakt" />
       <div className="kontakt">
         <div className="kontakt-card">
           <h2>Kontakt</h2>

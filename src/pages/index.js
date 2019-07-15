@@ -12,7 +12,7 @@ import Testemonials from "../components/Home-components/Testemonials"
 //layout animated fires up css svg animation of hand written logo, by default is set to false
 const IndexPage = () => (
   <Layout animated>
-    <SEO title="Home" />
+    <SEO title="Hlavní Strana" />
     <Intro />
     <Showcase />
     <StairsGallery />

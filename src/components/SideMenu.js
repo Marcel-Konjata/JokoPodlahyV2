@@ -1,18 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 function SideMenu(props) {
   return (
     <aside className={`sidebar`}>
-      <Link to="/kdo_jsme">
+      <AniLink fade to="/kdo_jsme">
         <span onClick={props.toggle}>Kdo Jsme</span>
-      </Link>
-      <Link to="/galerie">
+      </AniLink>
+      <AniLink fade to="/galerie">
         <span onClick={props.toggle}>Galerie</span>
-      </Link>
-      <Link to="/kontakt">
+      </AniLink>
+      <AniLink fade to="/kontakt">
         <span onClick={props.toggle}>Kontakt</span>
-      </Link>
+      </AniLink>
     </aside>
   )
 }

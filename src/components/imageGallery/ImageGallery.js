@@ -14,7 +14,7 @@ function ImageGallery() {
     setOpen(true)
   }
 
-  console.log(isOpen)
+  
 
   return (
     <div className="image-gallery">

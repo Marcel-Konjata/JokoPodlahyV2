@@ -9,7 +9,11 @@
   width: 100%;
   z-index: 100;
   background: white;
- 
+  transition: all .3s ease-out;
+ &.scrolled{
+   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.322);
+   transition: all .3s ease-out;
+ }
   .wrapper {
     display: flex;
     align-items: center;
@@ -27,6 +31,15 @@
     align-items: center;
 
     a {
+      color: rgba(0, 0, 0, 0.52);
+      transition: color .3s ease;
+      &.active{
+        color: black;
+      }
+      &:hover{
+        color: black;
+        
+      }
       &:not(:last-of-type) {
         margin-right: 3rem;
       }

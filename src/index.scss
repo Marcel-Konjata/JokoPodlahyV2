@@ -34,6 +34,7 @@ body {
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 #___gatsby > div {
   display: flex;
@@ -42,9 +43,11 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   align-items: stretch;
+ 
 
   main {
     flex: 1 0 auto;
+
   }
   header,
   footer {

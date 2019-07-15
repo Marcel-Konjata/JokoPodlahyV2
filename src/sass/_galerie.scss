@@ -137,11 +137,11 @@
     //lightbox styles ////////////////////////////////////////////////////
     .lightbox {
       border: 5px white solid;
-      min-width: 50vw;
+      min-width: 500px;
       max-width: 60vw;
-      max-height: 95vh;
+      max-height: 85vh;
       position: fixed;
-      top: 50%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       overflow: hidden;
