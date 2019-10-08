@@ -9,7 +9,7 @@ He always believed in me (and he still does) even when I chose to go wrong path 
 
 So this is my small and humble "Thank you" to my dad.
 
-Site is made by simple componetns and logic. It is my first real website project with ReactJs after spending month and half with courses form Tyler McGinnis and Documentation. Only I think one render prop component with no context api (I have practiced fetch async and context at different project)
+Site is made by simple componetns and logic. It is my first real website project with ReactJs after spending month and half with courses form Tyler McGinnis and Documentation. 
 
 Page is developed throught GatsbyJs (used only default starter -> part of project was learn to work with the Gatsby and decide if stick with it or move to NEXTjs)
 
